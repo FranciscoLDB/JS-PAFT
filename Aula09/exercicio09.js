@@ -53,22 +53,52 @@ class Circulo{
 const circ5 = new Circulo(5);
 
 //6. Crie o atributo do raio. Torne-o privado.
-
-
+class CirculoPrivado{
+    #raio;
+    constructor(raio = 0){
+        this.#raio = raio;
+    }
+}
+const cp = new CirculoPrivado(3);
 
 //7. Adicione em sua classe um setter em que, caso o raio seja negativo, retire o sinal (um raio setado como -3 se tornaria 3)
 
+Circulo.prototype.set_raio = (raio) => {
+    if(raio < 0){
+        raio = raio*(-1);
+    }
+    this.raio = raio;
+    console.log('raio == ' + raio + '  this.raio == ' + this.raio);
+}
+const circ11 = new Circulo();
+circ11.set_raio(-1);
+console.log('circ11 == ' + circ11.raio);
 
 
 //8. Adicione getters para o método raio e também para a área e o perímetro
 
+/*  CirculoPrivado.prototype.get_raio = () => { return this.#raio; }
+    CirculoPrivado.prototype.get_area = () => { return (PI*this.#raio*this.#raio); }
+    CirculoPrivado.prototype.get_perimetro = () => { return (2*PI*this.#raio); }    */
+
+class CirculoPrivado8{
+    #raio;
+    constructor(raio = 0){
+        this.#raio = raio;
+    }
+    get_raio(){ return this.#raio; }    
+    get_area(){ return (PI*this.#raio*this.#raio); }
+    get_perimetro(){ return (2*PI*this.#raio); }
+}
+const circ8 = new CirculoPrivado8(8);
+console.log('circ8 raio = ' + circ8.get_raio() + '  area = ' + circ8.get_area() + '  perimetro = ' + circ8.get_perimetro());
 
 //9. Sobreponha o método toString() da sua classe Circulo para imprimi-la como Circulo de raio ${raio}
 
 Circulo.toString = () =>{
     console.log(`Circulo de raio ${this.raio}`);
 }
-const circ9 = new Circulo(5);
+const circ9 = new Circulo(9);
 
 console.log(circ9);
 
