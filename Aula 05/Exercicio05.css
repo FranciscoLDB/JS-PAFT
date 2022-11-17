@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(134, 180, 184);
+    font-family: monospace;
+    font-size: larger;
+}
+
+p{
+    display: inline-flex;
+}
+
+button{
+    background-color: aliceblue;
+    margin-top: 8px;
+}

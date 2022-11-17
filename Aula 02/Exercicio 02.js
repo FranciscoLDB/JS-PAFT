@@ -17,11 +17,11 @@ console.log(`Média dos valores: ${media.toFixed(2)}`);
 /* EXERCICIO 02 */
 console.log('\nEXERCICIO 02\n');
 
-const pessoas = [{nome:"Mario",cor:"branco"}, {nome:"Pedro",cor:"branco"}, {nome:"Gabriel",cor:"negro"}, 
-{nome:"Kely",cor:"outro"}, {nome:"Carlos",cor:"branco"}, {nome:"Maria",cor:"padro"}, 
-{nome:"Bruna",cor:"branco"}, {nome:"Jonatas",cor:"outro"}, {nome:"Laura",cor:"negro"}, 
-{nome:"Issabel",cor:"pardo"}, {nome:"Neto",cor:"branco"}, {nome:"Jean",cor:"outro"}, 
-{nome:"Lucas",cor:"negro"}, {nome:"Rosimara",cor:"pardo"}, {nome:"Bianca",cor:"branco"},];
+const pessoas = [{nome:"Lucas",cor:"branco"}, {nome:"Pedro",cor:"branco"}, {nome:"Matheus",cor:"negro"}, 
+{nome:"Ricardo",cor:"outro"}, {nome:"Joao",cor:"branco"}, {nome:"Carlos",cor:"padro"}, 
+{nome:"Toni",cor:"branco"}, {nome:"Jonatas",cor:"outro"}, {nome:"Laura",cor:"negro"}, 
+{nome:"Rebeka",cor:"pardo"}, {nome:"Abner",cor:"branco"}, {nome:"Lucas",cor:"outro"}, 
+{nome:"Joao",cor:"negro"}, {nome:"Felipe",cor:"pardo"}, {nome:"Joao",cor:"branco"},];
 
 let contagem = {};
 for (let pessoa of pessoas) {
@@ -40,15 +40,15 @@ let num = Math.floor(Math.random() * 100) + 1;
 let tentativa = prompt("Digite um número:");
 
 while(tentativa != num){
-    tentativa = prompt("Digite um número:");
     if (tentativa > num){
         console.log("Maior");
     } else if (tentativa < num){
         console.log("Menor");
     }
     if (tentativa <= 0 || tentativa > 100) {
-        tentativa = prompt("Desistiu?");
+        tentativa = prompt("Desistiu? (s para sair)");
         if(tentativa == "s")
-            break;
+        break;
     }
+    tentativa = prompt("Digite um número:");
 }

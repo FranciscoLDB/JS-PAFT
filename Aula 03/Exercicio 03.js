@@ -194,11 +194,11 @@ function collatz(elem) {
 }
 
 const seq = collatz(5);
-console.log(seq()); //16
-console.log(seq()); //8
-console.log(seq()); //4
-console.log(seq()); //2
-console.log(seq()); //1
+console.log(seq());
+console.log(seq());
+console.log(seq());
+console.log(seq());
+console.log(seq());
 
 /* EXERCICIO 10 
 Crie a função verbose que recebe uma função como parâmetro e retorna outra, 
@@ -217,15 +217,16 @@ function verbose(fn) {
 }
 const soma = (a, b) => a + b;
 const sum = verbose(soma);
-sum(5,2); //Imprime soma(5,2) = 7
-
-console.log("---------------------");
+sum(5,2);
 
 /*11. Crie a função fixar que aceita uma função f e valores de parâmetros.
 Ela retorna outra função que chama f com esses parâmetros 
 passados por primeiro como se estivessem “fixos”.
 Exemplos:
 */
+console.log("---------------------");
+console.log("EXERCICIO 11\n");
+
 function log(modulo, nivel, texto) {
     console.log(`${nivel}: ${texto} (${modulo})`)
 }
@@ -236,9 +237,10 @@ function fixar(fn, ...esquerda) {
 }
 
 let logAula = fixar(log, `aula.js`, 'INFO');
-logAula("Exemplo");  //Imprime INFO: Exemplo (aula.js)
-logAula("PUCPR");  //Imprime INFO: PUCPR (aula.js)
+logAula("Exemplo");
+logAula("PUCPR");
 
 let soma10 = fixar(soma, 10);
+console.log(soma10(50));
 
-console.log(soma10(50)); //imprime 60
+console.log("---------------------");
